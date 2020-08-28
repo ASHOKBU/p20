@@ -1,0 +1,58 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap-reboot-min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <script src="{% static 'app/js/bootstrap.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert-check it out!
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-4">
+            {{form.name|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            {{form.email|as_crispy_field}}
+        </div>
+        <div class="col-4">
+            {{form.confirm_email|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            {{form.pwd|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            {{form.profile_pic|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            {{form.botcacher|as_crispy_field}}
+        </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</body>
+</html>
